@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Tracker</title>
+</head>
+<body>
+    <form autocomplete="off">
+        <div>
+            <label for="new_item">Add new item *:</label><br>
+            <input type="text" id="new_item" name="new_item"/><br>
+        </div>
+        <div class="form-action-button">
+            <input type="button" value="submit" onclick="submitForm()"></input>
+        </div>
+    </form>
+    <div>
+        <table id="inventory_list">
+            <thead>
+                <tr>
+                    <th>Inventory Item</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="static/index.js"></script>
+</body>
+</html>
