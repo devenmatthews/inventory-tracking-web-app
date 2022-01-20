@@ -52,3 +52,20 @@ function addToTable(_item) {
                                 <input type="button" value="Delete" onclick="deleteItem(this)"></input>`;
     table_length += 1;
 }
+
+function exportCSV() {
+    if (table_length == 0) {
+        window.print("Table appears to be blank.");
+        return
+    }
+    if(confirm("Export CSV: Are you sure?")) {
+        let csvContent = "data:text/csv;charset=utf-8,";
+        for (let step = 1; step < table_length + 1; step++) {
+            console.log(document.getElementById("inventory_list").getElementsByTagName('tr')[step].getElementsByTagName('td')[0].innerHTML);
+            console.log("|");
+            csvContent += document.getElementById("inventory_list").getElementsByTagName('tr')[step].getElementsByTagName('td')[0].innerHTML + "\r\n";
+        }
+        var encodedUri = encodeURI(csvContent);
+        window.open(encodedUri);
+    }
+}
